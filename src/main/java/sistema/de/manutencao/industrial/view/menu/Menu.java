@@ -13,7 +13,7 @@ public abstract class Menu {
     public abstract void execute();
 
     public Menu getNextMenu() {
-        return nextMenu;
+        return nextMenu == null ? this : nextMenu;
     }
 
     public Reader getReader() {
