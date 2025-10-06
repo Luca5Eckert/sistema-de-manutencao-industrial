@@ -2,11 +2,11 @@ package sistema.de.manutencao.industrial.view;
 
 public interface Reader {
 
-    String lerLinha();
+    String readLine();
 
-    int lerInteger();
+    int readInteger();
 
-    double lerDouble();
+    double readDouble();
 
-    long lerLong();
+    long readLong();
 }

@@ -13,12 +13,12 @@ public class ReaderAdapter implements Reader {
     }
 
     @Override
-    public String lerLinha() {
+    public String readLine() {
         return scanner.nextLine();
     }
 
     @Override
-    public int lerInteger() {
+    public int readInteger() {
         try{
             return scanner.nextInt();
         } catch (Exception e) {
@@ -27,7 +27,7 @@ public class ReaderAdapter implements Reader {
     }
 
     @Override
-    public double lerDouble() {
+    public double readDouble() {
         try{
             return scanner.nextDouble();
         } catch (Exception e) {
@@ -36,7 +36,7 @@ public class ReaderAdapter implements Reader {
     }
 
     @Override
-    public long lerLong() {
+    public long readLong() {
         try{
             return scanner.nextLong();
         } catch (Exception e) {
