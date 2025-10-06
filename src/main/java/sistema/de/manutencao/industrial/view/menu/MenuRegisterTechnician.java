@@ -30,7 +30,7 @@ public class MenuRegisterTechnician extends Menu {
     private Menu registerTechnician(RegisterTechnicianRequest registerTechnicianRequest) {
         var technicianRegisterResponse = technicianController.register(registerTechnicianRequest);
 
-        System.out.println("| Tecnico registrado com succeso");
+        System.out.println("| Técnico registrado com succeso");
         System.out.println(technicianRegisterResponse);
 
         return new MenuMain(getReader());

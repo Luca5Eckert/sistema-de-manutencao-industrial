@@ -16,4 +16,7 @@ public class Menus {
         return MenuRegisterMachine.toInstance(reader);
     }
 
+    public static Menu toInstanceRegisterTechnician(Reader reader) {
+        return MenuRegisterTechnician.toInstance(reader);
+    }
 }
