@@ -38,7 +38,7 @@ public class MenuMain extends Menu {
         
         System.out.println("--------------------------------------------------------------------------------");
 
-        return getReader().lerLinha();
+        return getReader().readLine();
     }
 
     static Menu toInstance(Reader reader) {

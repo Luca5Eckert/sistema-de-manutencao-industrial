@@ -6,11 +6,13 @@ public class MachineEntity {
 
     private final long id;
     private final String register;
+    private final String sector;
     private OperationalStatus status;
 
-    public MachineEntity(long id, String register) {
+    public MachineEntity(long id, String register, String sector) {
         this.id = id;
         this.register = register;
+        this.sector = sector;
     }
 
 }
