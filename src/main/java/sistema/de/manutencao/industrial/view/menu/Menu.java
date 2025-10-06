@@ -19,4 +19,8 @@ public abstract class Menu {
     public Reader getReader() {
         return reader;
     }
+
+    public void setNextMenu(Menu nextMenu) {
+        this.nextMenu = nextMenu;
+    }
 }

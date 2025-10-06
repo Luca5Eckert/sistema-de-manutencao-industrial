@@ -2,9 +2,9 @@ package sistema.de.manutencao.industrial.view.menu;
 
 import sistema.de.manutencao.industrial.view.Reader;
 
-public class MenuEndSystem extends Menu {
+public class MenuRegisterMachine extends Menu {
 
-    protected MenuEndSystem(Reader reader) {
+    protected MenuRegisterMachine(Reader reader) {
         super(reader);
     }
 
@@ -14,6 +14,6 @@ public class MenuEndSystem extends Menu {
     }
 
     public static Menu toInstance(Reader reader) {
-        return new MenuEndSystem(reader);
+        return new MenuRegisterMachine(reader);
     }
 }
