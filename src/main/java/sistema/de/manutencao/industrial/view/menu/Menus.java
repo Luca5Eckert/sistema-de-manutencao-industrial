@@ -19,4 +19,8 @@ public class Menus {
     public static Menu toInstanceRegisterTechnician(Reader reader) {
         return MenuRegisterTechnician.toInstance(reader);
     }
+
+    public static Menu toInstanceCreateMaintenanceOrder(Reader reader){
+        return MenuCreateMaintenanceOrder.toInstance(reader);
+    }
 }
