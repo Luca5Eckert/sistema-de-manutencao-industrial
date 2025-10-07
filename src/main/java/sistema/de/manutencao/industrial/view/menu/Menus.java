@@ -16,11 +16,15 @@ public class Menus {
         return MenuRegisterMachine.toInstance(reader);
     }
 
-    public static Menu toInstanceRegisterTechnician(Reader reader) {
+    public static Menu toInstanceRegisterTechnicianMenu(Reader reader) {
         return MenuRegisterTechnician.toInstance(reader);
     }
 
-    public static Menu toInstanceCreateMaintenanceOrder(Reader reader){
+    public static Menu toInstanceCreateMaintenanceOrderMenu(Reader reader){
+        return MenuCreateMaintenanceOrder.toInstance(reader);
+    }
+
+    public static Menu toInstanceRegisterPiece(Reader reader){
         return MenuCreateMaintenanceOrder.toInstance(reader);
     }
 }
