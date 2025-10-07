@@ -1,8 +1,6 @@
 package sistema.de.manutencao.industrial.module.maintenance_order.domain.enumerator;
 
-import sistema.de.manutencao.industrial.module.machine.domain.enumerator.OperationalStatus;
-import sistema.de.manutencao.industrial.module.machine.domain.exception.OperationalStatusException;
-import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrder;
+import sistema.de.manutencao.industrial.module.maintenance_order.domain.exception.MaintenanceOrderStatusException;
 
 import java.util.List;
 

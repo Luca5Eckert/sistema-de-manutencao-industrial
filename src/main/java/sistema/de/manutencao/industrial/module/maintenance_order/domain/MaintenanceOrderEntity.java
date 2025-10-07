@@ -6,7 +6,7 @@ import sistema.de.manutencao.industrial.module.technician.domain.TechnicianEntit
 
 import java.time.LocalDate;
 
-public class MaintenanceOrder {
+public class MaintenanceOrderEntity {
 
     private final long id;
 
@@ -16,7 +16,7 @@ public class MaintenanceOrder {
     private final LocalDate requestDate;
     private MaintenanceOrderStatus status;
 
-    public MaintenanceOrder(MachineEntity machineEntity, TechnicianEntity technicianEntity, LocalDate requestDate, MaintenanceOrderStatus status) {
+    public MaintenanceOrderEntity(MachineEntity machineEntity, TechnicianEntity technicianEntity, LocalDate requestDate, MaintenanceOrderStatus status) {
         this.id = -1;
         this.machineEntity = machineEntity;
         this.technicianEntity = technicianEntity;
@@ -24,7 +24,7 @@ public class MaintenanceOrder {
         this.status = status;
     }
 
-    public MaintenanceOrder(long id, MachineEntity machineEntity, TechnicianEntity technicianEntity, LocalDate requestDate, MaintenanceOrderStatus status) {
+    public MaintenanceOrderEntity(long id, MachineEntity machineEntity, TechnicianEntity technicianEntity, LocalDate requestDate, MaintenanceOrderStatus status) {
         this.id = id;
         this.machineEntity = machineEntity;
         this.technicianEntity = technicianEntity;
