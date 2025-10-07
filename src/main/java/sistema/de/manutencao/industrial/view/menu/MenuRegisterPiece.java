@@ -1,7 +1,7 @@
 package sistema.de.manutencao.industrial.view.menu;
 
 import sistema.de.manutencao.industrial.infrastructure.bean.PieceBeanUtil;
-import sistema.de.manutencao.industrial.module.piece.application.register.RegisterPieceRequest;
+import sistema.de.manutencao.industrial.module.piece.application.dto.register.RegisterPieceRequest;
 import sistema.de.manutencao.industrial.view.Reader;
 import sistema.de.manutencao.industrial.view.controller.PieceController;
 

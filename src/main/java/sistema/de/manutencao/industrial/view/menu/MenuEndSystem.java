@@ -10,7 +10,6 @@ public class MenuEndSystem extends Menu {
 
     @Override
     public void execute() {
-
     }
 
     public static Menu toInstance(Reader reader) {

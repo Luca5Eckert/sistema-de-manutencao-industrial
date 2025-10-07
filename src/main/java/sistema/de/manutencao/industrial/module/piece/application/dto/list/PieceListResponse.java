@@ -1,4 +1,4 @@
-package sistema.de.manutencao.industrial.module.piece.application.list;
+package sistema.de.manutencao.industrial.module.piece.application.dto.list;
 
 public record PieceListResponse(long id, String name, double quantity) {
 }

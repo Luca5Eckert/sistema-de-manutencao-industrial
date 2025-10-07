@@ -1,8 +1,8 @@
 package sistema.de.manutencao.industrial.view.controller;
 
-import sistema.de.manutencao.industrial.module.piece.application.list.PieceListResponse;
-import sistema.de.manutencao.industrial.module.piece.application.register.RegisterPieceRequest;
-import sistema.de.manutencao.industrial.module.piece.application.register.RegisterPieceResponse;
+import sistema.de.manutencao.industrial.module.piece.application.dto.list.PieceListResponse;
+import sistema.de.manutencao.industrial.module.piece.application.dto.register.RegisterPieceRequest;
+import sistema.de.manutencao.industrial.module.piece.application.dto.register.RegisterPieceResponse;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package sistema.de.manutencao.industrial.module.piece.application.register;
+package sistema.de.manutencao.industrial.module.piece.application.dto.register;
 
 import sistema.de.manutencao.industrial.infrastructure.exception.InputBlankException;
 
