@@ -24,7 +24,11 @@ public class Menus {
         return MenuCreateMaintenanceOrder.toInstance(reader);
     }
 
-    public static Menu toInstanceRegisterPiece(Reader reader){
-        return MenuCreateMaintenanceOrder.toInstance(reader);
+    public static Menu toInstanceRegisterPieceMenu(Reader reader){
+        return MenuRegisterPiece.toInstance(reader);
+    }
+
+    public static Menu toInstanceCreateOrderPieceMenu(Reader reader){
+        return MenuCreateOrderPiece.toInstance(reader);
     }
 }

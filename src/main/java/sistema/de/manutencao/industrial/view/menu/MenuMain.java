@@ -16,8 +16,9 @@ public class MenuMain extends Menu {
         Menu menu = switch (input.toUpperCase()){
             case "1" -> Menus.toInstanceRegisterMachineMenu(getReader());
             case "2" -> Menus.toInstanceRegisterTechnicianMenu(getReader());
-            case "3" -> Menus.toInstanceRegisterPiece(getReader());
+            case "3" -> Menus.toInstanceRegisterPieceMenu(getReader());
             case "4" -> Menus.toInstanceCreateMaintenanceOrderMenu(getReader());
+            case "6" -> Menus.to
             case "0" -> Menus.toInstanceEndSystemMenu(getReader());
             default -> throw new NoMatchInput();
         };
