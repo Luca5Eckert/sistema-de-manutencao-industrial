@@ -52,10 +52,7 @@ public class MenuRegisterMachine extends Menu {
         System.out.println(" Estado Operacional: ");
         ConsoleUtil.printList(OperationalStatus.getValues());
 
-        int num = getReader().readInteger();
-        OperationalStatus operationalStatus = OperationalStatus.get(num-1);
-
-        return new RegisterMachineRequest(register, setor, operationalStatus);
+        return new RegisterMachineRequest(register, setor, OperationalStatus.OPERACIONAL);
     }
 
     public static Menu toInstance(Reader reader) {
