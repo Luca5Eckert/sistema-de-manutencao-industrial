@@ -1,4 +1,11 @@
 package sistema.de.manutencao.industrial.module.technician.application.dto.register;
 
-public record TechnicianRegisterResponse(long id, String name, String specialty) {
+public record TechnicianRegisterResponse(String name, String specialty) {
+
+
+    @Override
+    public String toString() {
+        return " Nome: " + name
+                + "\n Especialidade: " + specialty;
+    }
 }

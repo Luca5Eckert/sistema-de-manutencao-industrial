@@ -33,20 +33,24 @@ public class MenuRegisterTechnician extends Menu {
         System.out.println("| Técnico registrado com succeso");
         System.out.println(technicianRegisterResponse);
 
-        return new MenuMain(getReader());
+        return Menus.toInstanceMainMenu(getReader());
     }
 
     private RegisterTechnicianRequest callMenu() {
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println("                               CADASTRAR TECNICO");
         System.out.println("--------------------------------------------------------------------------------");
-        System.out.println(" ");
+        System.out.println(" Digite os dados para cadastrar: ( 0 para cancelar )");
 
         System.out.println(" Nome: ");
         String name = getReader().readLine();
 
+        if(name.equals("0")) return null;
+
         System.out.println(" Especialidade: ");
         String specialty = getReader().readLine();
+
+        if(specialty.equals("0")) return null;
 
         return new RegisterTechnicianRequest(name, specialty);
     }

@@ -41,13 +41,17 @@ public class MenuRegisterMachine extends Menu {
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println("                               CADASTRAR MAQUINA");
         System.out.println("--------------------------------------------------------------------------------");
-        System.out.println(" ");
+        System.out.println(" Digite os dados para cadastrar: ( 0 para cancelar )");
 
         System.out.println(" Nome: ");
         String name = getReader().readLine();
 
+        if(name.equals("0")) return null;
+
         System.out.println(" Setor: ");
         String setor = getReader().readLine();
+
+        if(setor.equals("0")) return null;
 
         return new RegisterMachineRequest(name, setor);
     }
