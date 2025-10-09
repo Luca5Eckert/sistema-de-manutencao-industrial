@@ -31,7 +31,7 @@ public class MenuRegisterMachine extends Menu {
     private Menu registerMachine(RegisterMachineRequest registerMachineRequest) {
         var machineRegisterResponse = machineController.register(registerMachineRequest);
 
-        System.out.println("| Machine register with sucess");
+        System.out.println("| Maquina registrada com sucesso");
         System.out.println(machineRegisterResponse);
 
         return new MenuMain(getReader());
@@ -43,16 +43,13 @@ public class MenuRegisterMachine extends Menu {
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println(" ");
 
-        System.out.println(" Cadastro: ");
-        String register = getReader().readLine();
+        System.out.println(" Nome: ");
+        String name = getReader().readLine();
 
         System.out.println(" Setor: ");
         String setor = getReader().readLine();
 
-        System.out.println(" Estado Operacional: ");
-        ConsoleUtil.printList(OperationalStatus.getValues());
-
-        return new RegisterMachineRequest(register, setor, OperationalStatus.OPERACIONAL);
+        return new RegisterMachineRequest(name, setor);
     }
 
     public static Menu toInstance(Reader reader) {
