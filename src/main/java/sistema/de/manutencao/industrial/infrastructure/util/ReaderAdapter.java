@@ -20,7 +20,9 @@ public class ReaderAdapter implements Reader {
     @Override
     public int readInteger() {
         try{
-            return scanner.nextInt();
+            var num = scanner.nextInt();
+            scanner.nextLine();
+            return num;
         } catch (Exception e) {
             throw new RuntimeException("Integer");
         }
@@ -29,7 +31,9 @@ public class ReaderAdapter implements Reader {
     @Override
     public double readDouble() {
         try{
-            return scanner.nextDouble();
+            var num = scanner.nextDouble();
+            scanner.nextLine();
+            return num;
         } catch (Exception e) {
             throw new RuntimeException("Double");
         }
@@ -38,7 +42,9 @@ public class ReaderAdapter implements Reader {
     @Override
     public long readLong() {
         try{
-            return scanner.nextLong();
+            var num = scanner.nextLong();
+            scanner.nextLine();
+            return num;
         } catch (Exception e) {
             throw new RuntimeException("Long");
         }
