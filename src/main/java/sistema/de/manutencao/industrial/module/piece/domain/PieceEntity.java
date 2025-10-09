@@ -5,18 +5,18 @@ public class PieceEntity {
     private final long id;
 
     private String name;
-    private double estoque;
+    private double stock;
 
-    public PieceEntity(String name, double estoque) {
+    public PieceEntity(String name, double stock) {
         this.id = -1;
         this.name = name;
-        this.estoque = estoque;
+        this.stock = stock;
     }
 
-    public PieceEntity(long id, String name, double estoque) {
+    public PieceEntity(long id, String name, double stock) {
         this.id = id;
         this.name = name;
-        this.estoque = estoque;
+        this.stock = stock;
     }
 
     public long getId() {
@@ -31,11 +31,11 @@ public class PieceEntity {
         this.name = name;
     }
 
-    public double getEstoque() {
-        return estoque;
+    public double getStock() {
+        return stock;
     }
 
-    public void setEstoque(double estoque) {
-        this.estoque = estoque;
+    public void setStock(double stock) {
+        this.stock = stock;
     }
 }

@@ -29,20 +29,22 @@ public class MenuRegisterPiece extends Menu {
     private Menu registerPiece(RegisterPieceRequest registerPieceRequest) {
         var pieceRegisterResponse = pieceController.register(registerPieceRequest);
 
-        System.out.println("| Técnico registrado com succeso");
+        System.out.println("| Peça registrada com succeso");
         System.out.println(pieceRegisterResponse);
 
-        return new MenuMain(getReader());
+        return Menus.toInstanceMainMenu(getReader());
     }
 
     private RegisterPieceRequest callMenu() {
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println("                               CADASTRAR PEÇA");
         System.out.println("--------------------------------------------------------------------------------");
-        System.out.println(" ");
+        System.out.println(" Digite os dados para cadastrar: ( 0 para cancelar )");
 
         System.out.println(" Nome: ");
         String name = getReader().readLine();
+
+        if(name.equals("0")) return null;
 
         System.out.println(" Quantidade: ");
         double quantity = getReader().readDouble();
