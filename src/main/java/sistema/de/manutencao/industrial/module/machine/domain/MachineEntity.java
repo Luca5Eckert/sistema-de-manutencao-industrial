@@ -23,6 +23,12 @@ public class MachineEntity {
         this.status = status;
     }
 
+    public MachineEntity(long id) {
+        this.id = id;
+        this.name = null;
+        this.sector = null;
+    }
+
     public long getId() {
         return id;
     }

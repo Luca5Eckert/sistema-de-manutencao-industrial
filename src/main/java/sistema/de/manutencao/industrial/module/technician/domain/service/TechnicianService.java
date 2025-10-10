@@ -1,11 +1,14 @@
 package sistema.de.manutencao.industrial.module.technician.domain.service;
 
+import sistema.de.manutencao.industrial.module.technician.application.dto.list.TechnicianListResponse;
 import sistema.de.manutencao.industrial.module.technician.application.dto.register.RegisterTechnicianRequest;
 import sistema.de.manutencao.industrial.module.technician.application.dto.register.TechnicianRegisterResponse;
 import sistema.de.manutencao.industrial.module.technician.domain.TechnicianEntity;
 import sistema.de.manutencao.industrial.module.technician.domain.exception.TechnicianNotUniqueException;
 import sistema.de.manutencao.industrial.module.technician.domain.mapper.TechnicianMapper;
 import sistema.de.manutencao.industrial.module.technician.domain.port.TechnicianRepository;
+
+import java.util.List;
 
 public class TechnicianService {
 
@@ -30,4 +33,7 @@ public class TechnicianService {
 
     }
 
+    public List<TechnicianListResponse> getAll() {
+        return technicianRepository.getAll().stream().map(technicianMapper::toListResponse).toList();
+    }
 }

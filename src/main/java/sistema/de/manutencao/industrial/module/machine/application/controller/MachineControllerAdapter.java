@@ -23,6 +23,6 @@ public class MachineControllerAdapter implements MachineController {
 
     @Override
     public List<MachineListResponse> getAll() {
-        return List.of();
+        return machineService.getAll();
     }
 }

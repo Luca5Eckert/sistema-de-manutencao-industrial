@@ -26,7 +26,7 @@ public class MenuExecuteMaintenance extends Menu {
         var entrada = callMenu(maintenanceOrders);
 
         if(ListUtil.isAItemInList(maintenanceOrders, entrada)){
-            var maintenanceOrderViewResponse = maintenanceOrderController.getViewMaintenance(maintenanceOrders.get(entrada));
+            var maintenanceOrderViewResponse = maintenanceOrderController.getViewMaintenance(maintenanceOrders.get(entrada).id());
 
             setNextMenu(Menus.toInstanceViewMaintenanceMenu(getReader(), maintenanceOrderViewResponse));
             return;

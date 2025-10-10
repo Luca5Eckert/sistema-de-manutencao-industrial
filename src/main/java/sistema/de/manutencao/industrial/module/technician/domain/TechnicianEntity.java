@@ -19,6 +19,9 @@ public class TechnicianEntity {
         this.specialty = specialty;
     }
 
+    public TechnicianEntity(long id) {
+        this.id = id;
+    }
     public long getId() {
         return id;
     }

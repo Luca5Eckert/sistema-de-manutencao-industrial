@@ -2,11 +2,14 @@ package sistema.de.manutencao.industrial.module.machine.domain.service;
 
 import sistema.de.manutencao.industrial.module.machine.application.dto.create.MachineRegisterResponse;
 import sistema.de.manutencao.industrial.module.machine.application.dto.create.RegisterMachineRequest;
+import sistema.de.manutencao.industrial.module.machine.application.dto.list.MachineListResponse;
 import sistema.de.manutencao.industrial.module.machine.domain.MachineEntity;
 import sistema.de.manutencao.industrial.module.machine.domain.enumerator.OperationalStatus;
 import sistema.de.manutencao.industrial.module.machine.domain.exception.MachineNotUniqueException;
 import sistema.de.manutencao.industrial.module.machine.domain.mapper.MachineMapper;
 import sistema.de.manutencao.industrial.module.machine.domain.port.MachineRepository;
+
+import java.util.List;
 
 public class MachineService {
 
@@ -31,4 +34,7 @@ public class MachineService {
     }
 
 
+    public List<MachineListResponse> getAll() {
+        return machineRepository.getAll().stream().map(machineMapper::toListarResponse).toList();
+    }
 }

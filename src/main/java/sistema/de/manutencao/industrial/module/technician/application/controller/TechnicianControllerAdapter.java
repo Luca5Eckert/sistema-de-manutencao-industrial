@@ -23,6 +23,6 @@ public class TechnicianControllerAdapter implements TechnicianController {
 
     @Override
     public List<TechnicianListResponse> getAll() {
-        return List.of();
+        return technicianService.getAll();
     }
 }

@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TechnicianDao {
 
@@ -56,4 +58,30 @@ public class TechnicianDao {
     }
 
 
+    public List<TechnicianEntity> getAll() {
+        List<TechnicianEntity> technicianEntityList = new ArrayList<>();
+        String query = """
+                SELECT id, nome, especialidade
+                FROM tecnico
+                """;
+
+        try(Connection connection = ConnectionDatabase.toInstance();
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery()){
+
+            while(resultSet.next()){
+                long id = resultSet.getLong("id");
+                String name = resultSet.getString("nome");
+                String speciality = resultSet.getString("especialidade");
+
+                TechnicianEntity technician = new TechnicianEntity(id, name, speciality);
+                technicianEntityList.add(technician);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return technicianEntityList;
+    }
 }

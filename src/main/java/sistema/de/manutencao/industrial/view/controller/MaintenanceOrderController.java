@@ -16,7 +16,7 @@ public interface MaintenanceOrderController {
 
     List<MaintenanceOrderListResponse> getAllPending();
 
-    MaintenanceOrderViewResponse getViewMaintenance(MaintenanceOrderListResponse maintenanceOrderListResponse);
+    MaintenanceOrderViewResponse getViewMaintenance(long id);
 
     void executeMaintance(MaintenanceOrderExecuteRequest maintenanceOrderExecuteRequest);
 }

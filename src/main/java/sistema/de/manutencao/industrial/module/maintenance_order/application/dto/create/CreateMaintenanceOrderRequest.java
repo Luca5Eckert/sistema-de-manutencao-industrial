@@ -4,5 +4,5 @@ import sistema.de.manutencao.industrial.module.maintenance_order.domain.enumerat
 
 import java.time.LocalDate;
 
-public record CreateMaintenanceOrderRequest(long idMachine, long idTechnician, LocalDate dateSolicitation, MaintenanceOrderStatus maintenanceOrderStatus) {
+public record CreateMaintenanceOrderRequest(long idMachine, long idTechnician) {
 }

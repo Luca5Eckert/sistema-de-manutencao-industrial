@@ -64,7 +64,7 @@ public class MenuCreateMaintenanceOrder extends Menu {
         System.out.println(" Técnico: ");
         long technician = getTechnician();
 
-        return new CreateMaintenanceOrderRequest(maquina, technician, LocalDate.now(), MaintenanceOrderStatus.PENDENTE);
+        return new CreateMaintenanceOrderRequest(maquina, technician);
     }
 
 
