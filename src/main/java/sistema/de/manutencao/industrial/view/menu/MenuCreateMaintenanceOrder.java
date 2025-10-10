@@ -87,7 +87,7 @@ public class MenuCreateMaintenanceOrder extends Menu {
         var machineList = machineController.getAll();
 
         ConsoleUtil.printList(machineList);
-        int input = getReader().readInteger();
+        int input = getReader().readInteger() - 1;
 
         if(input == -1) return input;
 

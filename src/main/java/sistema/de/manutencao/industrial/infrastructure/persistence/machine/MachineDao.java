@@ -99,4 +99,26 @@ public class MachineDao {
         return machineEntityList;
 
     }
+
+    public void changeStatus(long id, OperationalStatus operationalStatus) {
+        String query = """
+                UPDATE maquina
+                SET status = ?
+                WHERE id = ?
+                """;
+
+        try( Connection connection = ConnectionDatabase.toInstance();
+            PreparedStatement statement = connection.prepareStatement(query)){
+
+            statement.setString(1, operationalStatus.toString());
+            statement.setLong(2, id);
+
+            statement.executeUpdate();
+
+        } catch (SQLException sqlException){
+            throw new RuntimeException(sqlException.getMessage());
+        }
+
+
+    }
 }

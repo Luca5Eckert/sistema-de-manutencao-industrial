@@ -20,4 +20,8 @@ public class MachineBeanUtil {
     public static MachineController toInstanceController(){
         return MACHINE_CONTROLLER;
     }
+
+    public static MachineRepository toInstanceRepository() {
+        return MACHINE_REPOSITORY;
+    }
 }

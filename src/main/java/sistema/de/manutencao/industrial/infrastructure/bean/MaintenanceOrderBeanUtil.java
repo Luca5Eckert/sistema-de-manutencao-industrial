@@ -13,7 +13,7 @@ public class MaintenanceOrderBeanUtil {
     private final static MaintenanceOrderDao MAINTENANCE_ORDER_DAO = new MaintenanceOrderDao();
     private final static MaintenanceOrderRepository MAINTENANCE_ORDER_REPOSITORY = new MaintenanceOrderRepositoryAdapter(MAINTENANCE_ORDER_DAO);
     private final static MaintenanceOrderMapper MAINTENANCE_ORDER_MAPPER = new MaintenanceOrderMapper();
-    private final static MaintenanceOrderService MAINTENANCE_ORDER_SERVICE = new MaintenanceOrderService(MAINTENANCE_ORDER_REPOSITORY, MAINTENANCE_ORDER_MAPPER);
+    private final static MaintenanceOrderService MAINTENANCE_ORDER_SERVICE = new MaintenanceOrderService(MAINTENANCE_ORDER_REPOSITORY, MachineBeanUtil.toInstanceRepository(), MAINTENANCE_ORDER_MAPPER);
     private final static MaintenanceOrderController MAINTENANCE_ORDER_CONTROLLER = new MaintenanceOrderControllerAdapter(MAINTENANCE_ORDER_SERVICE);
 
     public static MaintenanceOrderController toInstanceController(){

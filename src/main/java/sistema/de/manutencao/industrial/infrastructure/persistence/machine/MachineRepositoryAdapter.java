@@ -1,6 +1,7 @@
 package sistema.de.manutencao.industrial.infrastructure.persistence.machine;
 
 import sistema.de.manutencao.industrial.module.machine.domain.MachineEntity;
+import sistema.de.manutencao.industrial.module.machine.domain.enumerator.OperationalStatus;
 import sistema.de.manutencao.industrial.module.machine.domain.port.MachineRepository;
 
 import java.util.List;
@@ -26,5 +27,10 @@ public class MachineRepositoryAdapter implements MachineRepository {
     @Override
     public List<MachineEntity> getAll() {
         return machineDao.getAllPedent();
+    }
+
+    @Override
+    public void changeStatus(long id, OperationalStatus operationalStatus) {
+        machineDao.changeStatus(id, operationalStatus);
     }
 }

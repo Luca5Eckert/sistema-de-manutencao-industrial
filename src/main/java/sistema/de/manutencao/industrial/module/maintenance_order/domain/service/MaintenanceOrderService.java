@@ -1,6 +1,8 @@
 package sistema.de.manutencao.industrial.module.maintenance_order.domain.service;
 
 import sistema.de.manutencao.industrial.module.machine.domain.MachineEntity;
+import sistema.de.manutencao.industrial.module.machine.domain.enumerator.OperationalStatus;
+import sistema.de.manutencao.industrial.module.machine.domain.port.MachineRepository;
 import sistema.de.manutencao.industrial.module.machine.domain.service.MachineService;
 import sistema.de.manutencao.industrial.module.maintenance_order.application.dto.create.CreateMaintenanceOrderRequest;
 import sistema.de.manutencao.industrial.module.maintenance_order.application.dto.create.CreateMaintenanceOrderResponse;
@@ -19,10 +21,13 @@ import java.util.List;
 public class MaintenanceOrderService {
 
     private final MaintenanceOrderRepository maintenanceOrderRepository;
+    private final MachineRepository machineRepository;
+
     private final MaintenanceOrderMapper maintenanceOrderMapper;
 
-    public MaintenanceOrderService(MaintenanceOrderRepository maintenanceOrderRepository, MaintenanceOrderMapper maintenanceOrderMapper) {
+    public MaintenanceOrderService(MaintenanceOrderRepository maintenanceOrderRepository, MachineRepository machineRepository, MaintenanceOrderMapper maintenanceOrderMapper) {
         this.maintenanceOrderRepository = maintenanceOrderRepository;
+        this.machineRepository = machineRepository;
         this.maintenanceOrderMapper = maintenanceOrderMapper;
     }
 
@@ -45,6 +50,8 @@ public class MaintenanceOrderService {
         MaintenanceOrderEntity maintenanceOrderEntity = new MaintenanceOrderEntity(machineEntity, technicianEntity, LocalDate.now(), MaintenanceOrderStatus.EXECUTADA);
 
         maintenanceOrderRepository.save(maintenanceOrderEntity);
+
+        machineRepository.changeStatus(machineEntity.getId(), OperationalStatus.EM_MANUTENCAO);
 
         return maintenanceOrderMapper.toCreateResponse(maintenanceOrderEntity);
     }
