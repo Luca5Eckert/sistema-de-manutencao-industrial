@@ -18,14 +18,10 @@ public class MaintenanceOrderDao {
     public void save(MaintenanceOrderEntity maintenanceOrderEntity) {
 
         String query = """
-                INSERT INTO OrdemManutencao
-                ( 
-                idMaquina, 
-                idTecnico, 
-                dataSolicitacao
-                status 
+                INSERT INTO ordemmanutencao
+                (
+                idMaquina, idTecnico, dataSolicitacao, status
                 )
-                
                 VALUES (?, ?, ?, ?)
                 """;
 
