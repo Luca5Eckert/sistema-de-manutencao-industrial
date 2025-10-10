@@ -1,11 +1,14 @@
 package sistema.de.manutencao.industrial.module.piece.domain.service;
 
+import sistema.de.manutencao.industrial.module.piece.application.dto.list.PieceListResponse;
 import sistema.de.manutencao.industrial.module.piece.application.dto.register.RegisterPieceRequest;
 import sistema.de.manutencao.industrial.module.piece.application.dto.register.RegisterPieceResponse;
 import sistema.de.manutencao.industrial.module.piece.domain.PieceEntity;
 import sistema.de.manutencao.industrial.module.piece.domain.exception.PieceNotUniqueException;
 import sistema.de.manutencao.industrial.module.piece.domain.mapper.PieceMapper;
 import sistema.de.manutencao.industrial.module.piece.domain.port.PieceRepository;
+
+import java.util.List;
 
 public class PieceService {
 
@@ -28,5 +31,9 @@ public class PieceService {
 
         return pieceMapper.toRegisterResponse(piece);
 
+    }
+
+    public List<PieceListResponse> getAll() {
+        return pieceRepository.getAll().stream().map(pieceMapper::toListResponse).toList();
     }
 }

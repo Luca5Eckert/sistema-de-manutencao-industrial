@@ -62,7 +62,7 @@ public class MenuCreateOrderPiece extends Menu {
         System.out.println(" Piece: ");
         long piece = getPiece();
 
-        System.out.println(" Quantiy: ");
+        System.out.println(" Quantidade: ");
         double quantity = getReader().readDouble();
 
         return new CreateOrderPieceRequest(maintenanceOrder, piece, quantity);
@@ -74,10 +74,9 @@ public class MenuCreateOrderPiece extends Menu {
         var pieceList = pieceController.getAll();
 
         ConsoleUtil.printList(pieceList);
-        int input = getReader().readInteger();
+        int input = getReader().readInteger() - 1;
 
         if(input == -1) return input;
-
 
         if(ListUtil.isAItemInList(pieceList, input)){
             return pieceList.get(input).id();
@@ -91,10 +90,9 @@ public class MenuCreateOrderPiece extends Menu {
         var maintenanceList = maintenanceOrderController.getAll();
 
         ConsoleUtil.printList(maintenanceList);
-        int input = getReader().readInteger();
+        int input = getReader().readInteger() - 1;
 
         if(input == -1) return input;
-
 
         if(ListUtil.isAItemInList(maintenanceList, input)){
             return maintenanceList.get(input).id();

@@ -1,29 +1,26 @@
 package sistema.de.manutencao.industrial.module.order_piece.domain;
 
-import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrderEntity;
-import sistema.de.manutencao.industrial.module.piece.domain.PieceEntity;
-
 public class OrderPieceEntity {
 
     private final OrderPieceId orderPieceId;
 
-    private double quantidade;
+    private double quantity;
 
-    public OrderPieceEntity(OrderPieceId orderPieceId, double quantidade) {
+    public OrderPieceEntity(OrderPieceId orderPieceId, double quantity) {
         this.orderPieceId = orderPieceId;
-        this.quantidade = quantidade;
+        this.quantity = quantity;
     }
 
     public OrderPieceId getOrderPieceId() {
         return orderPieceId;
     }
 
-    public double getQuantidade() {
-        return quantidade;
+    public double getQuantity() {
+        return quantity;
     }
 
-    public void setQuantidade(double quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
     }
 
 

@@ -9,4 +9,6 @@ public interface MaintenanceOrderRepository {
     List<MaintenanceOrderEntity> getAllPending();
 
     void save(MaintenanceOrderEntity maintenanceOrderEntity);
+
+    List<MaintenanceOrderEntity> getAll();
 }

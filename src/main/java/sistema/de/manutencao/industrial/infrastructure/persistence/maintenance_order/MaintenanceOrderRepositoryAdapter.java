@@ -1,5 +1,6 @@
 package sistema.de.manutencao.industrial.infrastructure.persistence.maintenance_order;
 
+import sistema.de.manutencao.industrial.module.maintenance_order.application.dto.list.MaintenanceOrderListResponse;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrderEntity;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.port.MaintenanceOrderRepository;
 
@@ -21,5 +22,10 @@ public class MaintenanceOrderRepositoryAdapter implements MaintenanceOrderReposi
     @Override
     public void save(MaintenanceOrderEntity maintenanceOrderEntity) {
         maintenanceOrderDao.save(maintenanceOrderEntity);
+    }
+
+    @Override
+    public List<MaintenanceOrderEntity> getAll() {
+        return maintenanceOrderDao.getALl();
     }
 }

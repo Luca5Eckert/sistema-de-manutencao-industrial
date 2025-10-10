@@ -4,13 +4,11 @@ import sistema.de.manutencao.industrial.module.maintenance_order.domain.enumerat
 
 import java.time.LocalDate;
 
-public record MaintenanceOrderListResponse(long id, long idMachine, long idTechnician, LocalDate dateSolicitation, MaintenanceOrderStatus maintenanceOrderStatus) {
+public record MaintenanceOrderListResponse(long id, long idMachine, long idTechnician, LocalDate dateSolicitation, MaintenanceOrderStatus maintenanceOrderStatus, String nameMachine) {
 
     @Override
     public String toString() {
-        return " Máquina: " + idMachine
-                + " Técnico: " + idTechnician
-                + " Date solicitação: " + dateSolicitation
-                + " Status: " + maintenanceOrderStatus();
+        return " Máquina: " + nameMachine
+                + "              Status: " + maintenanceOrderStatus();
     }
 }

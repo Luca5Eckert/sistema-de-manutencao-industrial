@@ -32,6 +32,20 @@ public class MaintenanceOrderEntity {
         this.status = status;
     }
 
+    public MaintenanceOrderEntity(long id, MachineEntity machineEntity, TechnicianEntity technicianEntity, LocalDate requestDate) {
+        this.id = id;
+        this.machineEntity = machineEntity;
+        this.technicianEntity = technicianEntity;
+        this.requestDate = requestDate;
+    }
+
+    public MaintenanceOrderEntity(long id) {
+        this.id = id;
+        this.machineEntity = null;
+        this.technicianEntity = null;
+        this.requestDate = null;
+    }
+
     public long getId() {
         return id;
     }

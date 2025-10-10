@@ -11,7 +11,8 @@ public class MaintenanceOrderMapper {
                 maintenanceOrderEntity.getMachineEntity().getId(),
                 maintenanceOrderEntity.getTechnicianEntity().getId(),
                 maintenanceOrderEntity.getRequestDate(),
-                maintenanceOrderEntity.getStatus());
+                maintenanceOrderEntity.getStatus(),
+                maintenanceOrderEntity.getMachineEntity().getName());
 
     }
 

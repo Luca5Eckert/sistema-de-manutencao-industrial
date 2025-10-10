@@ -1,6 +1,7 @@
 package sistema.de.manutencao.industrial.infrastructure.util;
 
 import sistema.de.manutencao.industrial.view.Reader;
+import sistema.de.manutencao.industrial.view.exception.ReaderException;
 
 import java.util.Scanner;
 
@@ -24,7 +25,8 @@ public class ReaderAdapter implements Reader {
             scanner.nextLine();
             return num;
         } catch (Exception e) {
-            throw new RuntimeException("Integer");
+            scanner.nextLine();
+            throw new ReaderException("Integer");
         }
     }
 
@@ -35,7 +37,8 @@ public class ReaderAdapter implements Reader {
             scanner.nextLine();
             return num;
         } catch (Exception e) {
-            throw new RuntimeException("Double");
+            scanner.nextLine();
+            throw new ReaderException("Double");
         }
     }
 
@@ -46,7 +49,8 @@ public class ReaderAdapter implements Reader {
             scanner.nextLine();
             return num;
         } catch (Exception e) {
-            throw new RuntimeException("Long");
+            scanner.nextLine();
+            throw new ReaderException("Long");
         }
     }
 }

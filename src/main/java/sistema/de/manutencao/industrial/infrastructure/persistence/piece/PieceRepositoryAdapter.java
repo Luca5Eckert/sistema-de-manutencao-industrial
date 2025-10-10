@@ -3,6 +3,8 @@ package sistema.de.manutencao.industrial.infrastructure.persistence.piece;
 import sistema.de.manutencao.industrial.module.piece.domain.PieceEntity;
 import sistema.de.manutencao.industrial.module.piece.domain.port.PieceRepository;
 
+import java.util.List;
+
 public class PieceRepositoryAdapter implements PieceRepository {
 
     private final PieceDao pieceDao;
@@ -19,5 +21,10 @@ public class PieceRepositoryAdapter implements PieceRepository {
     @Override
     public boolean isUnique(PieceEntity piece) {
         return pieceDao.isUnique(piece);
+    }
+
+    @Override
+    public List<PieceEntity> getAll() {
+        return pieceDao.getAll();
     }
 }

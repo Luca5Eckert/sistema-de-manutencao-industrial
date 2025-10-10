@@ -42,4 +42,5 @@ public class MaintenanceOrderControllerAdapter implements MaintenanceOrderContro
     public void executeMaintance(MaintenanceOrderExecuteRequest maintenanceOrderExecuteRequest) {
         maintenanceOrderService.executeMaintance(maintenanceOrderExecuteRequest);
     }
+
 }

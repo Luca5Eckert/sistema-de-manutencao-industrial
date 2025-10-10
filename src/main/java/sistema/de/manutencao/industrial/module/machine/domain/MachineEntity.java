@@ -29,6 +29,13 @@ public class MachineEntity {
         this.sector = null;
     }
 
+    public MachineEntity(long id, String name) {
+        this.id = id;
+        this.name = name;
+        this.sector = null;
+    }
+
+
     public long getId() {
         return id;
     }

@@ -19,6 +19,10 @@ public class PieceEntity {
         this.stock = stock;
     }
 
+    public PieceEntity(long id) {
+        this.id = id;
+    }
+
     public long getId() {
         return id;
     }

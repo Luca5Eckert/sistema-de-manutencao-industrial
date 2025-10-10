@@ -23,6 +23,6 @@ public class PieceControllerAdapter implements PieceController {
 
     @Override
     public List<PieceListResponse> getAll() {
-        return List.of();
+        return pieceService.getAll();
     }
 }
