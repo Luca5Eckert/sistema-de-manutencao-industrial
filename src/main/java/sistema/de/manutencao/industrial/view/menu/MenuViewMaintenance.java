@@ -47,9 +47,9 @@ public class MenuViewMaintenance extends Menu {
         System.out.println(" 0 - Voltar");
         System.out.println(" 1 - Realizar Manutenção");
         System.out.println("--------------------------------------------------------------------------------");
-        System.out.println(" Nome máquina: " + maintenanceOrderViewResponse.machineName() );
-        System.out.println(" Recursos Necessarios: ");
-        System.out.println(maintenanceOrderViewResponse.resourcesForMaintenance());
+        System.out.println(maintenanceOrderViewResponse);
+        System.out.println(" Estoque / Necessario: ");
+        System.out.println(maintenanceOrderViewResponse.resourcesInString());
         System.out.println("-------------------------------------------------------------------------------");
 
         return getReader().readLine();

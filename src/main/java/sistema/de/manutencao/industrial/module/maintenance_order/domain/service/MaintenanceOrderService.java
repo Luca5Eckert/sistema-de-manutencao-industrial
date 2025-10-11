@@ -10,6 +10,7 @@ import sistema.de.manutencao.industrial.module.maintenance_order.application.dto
 import sistema.de.manutencao.industrial.module.maintenance_order.application.dto.view.MaintenanceOrderViewResponse;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrderEntity;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.enumerator.MaintenanceOrderStatus;
+import sistema.de.manutencao.industrial.module.maintenance_order.domain.exception.MaintenanceOrderNotFoundException;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.mapper.MaintenanceOrderMapper;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.port.MaintenanceOrderRepository;
 import sistema.de.manutencao.industrial.module.technician.domain.TechnicianEntity;
@@ -35,7 +36,7 @@ public class MaintenanceOrderService {
     }
 
     public MaintenanceOrderViewResponse getViewMaintenance(long id) {
-        return null;
+        return maintenanceOrderRepository.getMaintenanceById(id).orElseThrow( () -> new MaintenanceOrderNotFoundException(id));
     }
 
     public List<MaintenanceOrderListResponse> getAll() {
