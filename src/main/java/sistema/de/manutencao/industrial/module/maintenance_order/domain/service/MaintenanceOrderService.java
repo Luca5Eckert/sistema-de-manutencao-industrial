@@ -10,13 +10,17 @@ import sistema.de.manutencao.industrial.module.maintenance_order.application.dto
 import sistema.de.manutencao.industrial.module.maintenance_order.application.dto.view.MaintenanceOrderViewResponse;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrderEntity;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.enumerator.MaintenanceOrderStatus;
+import sistema.de.manutencao.industrial.module.maintenance_order.domain.exception.MaintenanceOrderInsuficientResourcesException;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.exception.MaintenanceOrderNotFoundException;
+import sistema.de.manutencao.industrial.module.maintenance_order.domain.exception.MaintenanceOrderStatusException;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.mapper.MaintenanceOrderMapper;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.port.MaintenanceOrderRepository;
 import sistema.de.manutencao.industrial.module.technician.domain.TechnicianEntity;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MaintenanceOrderService {
 
@@ -57,5 +61,21 @@ public class MaintenanceOrderService {
     }
 
     public void executeMaintance(MaintenanceOrderExecuteRequest maintenanceOrderExecuteRequest) {
+
+        var resources = maintenanceOrderRepository.getResourcesTheMaintenance(maintenanceOrderExecuteRequest.id());
+
+        if(!canExecuteMaintenance(resources)) throw new MaintenanceOrderInsuficientResourcesException();
+
+        maintenanceOrderRepository.executeMaintance(maintenanceOrderExecuteRequest.id());
+
     }
+
+    private boolean canExecuteMaintenance(HashMap<Double, Double> resources) {
+        for(Map.Entry<Double, Double> entry :resources.entrySet()){
+            if(entry.getKey() < entry.getValue()) return false;
+        }
+        return true;
+    }
+
+
 }

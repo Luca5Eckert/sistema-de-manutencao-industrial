@@ -184,6 +184,40 @@ public class MaintenanceOrderDao {
 
     }
 
+    public HashMap<Double, Double> getResourcesByMaintenanceId(long idOrdem) {
+
+        HashMap<Double, Double> resources = new HashMap<>();
+
+        String query = """
+            SELECT
+            p.estoque
+            op.quantidade
+            FROM OrdemPeca op
+            JOIN Peca p ON p.id = op.idPeca
+            WHERE op.idOrdem = ?
+            """;
+
+        try (Connection connection = ConnectionDatabase.toInstance();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setLong(1, idOrdem);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    double estoque = resultSet.getDouble("estoque");
+                    double quantidadePedida = resultSet.getDouble("quantidade");
+
+                    resources.put(estoque, quantidadePedida);
+                }
+            }
+        } catch (SQLException e){
+            throw new RuntimeException(e.getMessage());
+        }
+
+        return resources;
+
+    }
+
     private HashMap<Double, Double> getResourcesByMaintenanceId(Connection connection, long idOrdem) throws SQLException {
 
         HashMap<Double, Double> resources = new HashMap<>();

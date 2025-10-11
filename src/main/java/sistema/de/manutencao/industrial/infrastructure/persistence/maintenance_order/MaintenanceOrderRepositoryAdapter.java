@@ -5,6 +5,7 @@ import sistema.de.manutencao.industrial.module.maintenance_order.application.dto
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.MaintenanceOrderEntity;
 import sistema.de.manutencao.industrial.module.maintenance_order.domain.port.MaintenanceOrderRepository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,5 +35,15 @@ public class MaintenanceOrderRepositoryAdapter implements MaintenanceOrderReposi
     @Override
     public Optional<MaintenanceOrderViewResponse> getMaintenanceById(long id) {
         return maintenanceOrderDao.getMaintenanceById(id);
+    }
+
+    @Override
+    public HashMap<Double, Double> getResourcesTheMaintenance(long id) {
+        return maintenanceOrderDao.getResourcesByMaintenanceId(id);
+    }
+
+    @Override
+    public void executeMaintance(long id) {
+
     }
 }
